@@ -2,122 +2,110 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>أغاني نصر الدين</title>
+<title>Nassr Eddine Music</title>
 
 <style>
 body{
     margin:0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #cce7ff, #e6f2ff);
-    text-align:center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg,#dbeeff,#cce4ff);
     color:#111;
 }
 
-h1{
-    margin-top:30px;
-    color:#003366;
-    text-shadow: 0 0 10px rgba(255,0,0,0.4);
+/* LOGO */
+.logo{
+    text-align:center;
+    margin-top:25px;
+    font-size:36px;
+    font-weight:bold;
+    color:#0a2a66;
+    letter-spacing:2px;
+    text-shadow:
+        0 4px 8px rgba(255,0,0,0.35),
+        0 8px 20px rgba(255,105,180,0.35);
+    transform: perspective(600px) rotateX(8deg);
 }
 
-p{
+/* TITLE */
+.subtitle{
+    text-align:center;
+    margin-top:10px;
     color:#333;
 }
 
+/* CONTAINER */
 .container{
     width:90%;
-    max-width:700px;
-    margin:auto;
-    margin-top:30px;
+    max-width:900px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
 }
 
+/* SONG CARD */
 .song{
-    background: rgba(255,255,255,0.9);
-    border-radius:16px;
-    padding:15px;
-    margin-bottom:20px;
+    background: linear-gradient(145deg,#ffffff,#f1f6ff);
+    border-radius:20px;
+    padding:18px;
     box-shadow:
-        0 0 15px rgba(255,105,180,0.4),
-        0 0 25px rgba(255,0,0,0.2);
-    transition: transform 0.3s;
+        0 15px 30px rgba(0,0,0,0.15),
+        0 0 25px rgba(255,105,180,0.35);
+    transform-style: preserve-3d;
+    transition: transform 0.4s, box-shadow 0.4s;
 }
 
 .song:hover{
-    transform: scale(1.03);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow:
+        0 25px 40px rgba(0,0,0,0.25),
+        0 0 35px rgba(255,0,0,0.4);
 }
 
 .song h3{
-    margin:0 0 10px 0;
-    color:#cc0066;
+    margin:0 0 12px 0;
+    color:#c2185b;
+    font-size:16px;
+    text-align:center;
 }
 
 audio{
     width:100%;
 }
 
+/* FOOTER */
 footer{
-    margin:30px 0;
-    font-size:13px;
+    text-align:center;
+    margin:40px 0 20px;
     color:#444;
+    font-size:13px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>🎶 مرحبا بكم في أغاني نصر الدين 🎶</h1>
-<p>استمع لأفضل الأغاني بتصميم احترافي</p>
+<div class="logo">NASSR EDDINE</div>
+<div class="subtitle">مرحبا بكم في أغاني نصر الدين 🎧</div>
 
 <div class="container">
 
-<div class="song">
-<h3>🎵 أغنية 1</h3>
-<audio controls src="songs/song1.mp3"></audio>
-</div>
-
-<div class="song">
-<h3>🎵 أغنية 2</h3>
-<audio controls src="songs/song2.mp3"></audio>
-</div>
-
-<div class="song">
-<h3>🎵 أغنية 3</h3>
-<audio controls src="songs/song3.mp3"></audio>
-</div>
-
-<div class="song">
-<h3>🎵 أغنية 4</h3>
-<audio controls src="songs/song4.mp3"></audio>
-</div>
-
-<div class="song">
-<h3>🎵 أغنية 5</h3>
-<audio controls src="songs/song5.mp3"></audio>
-</div>
-
-<div class="song">
-<h3>🎵 أغنية 6</h3>
-<audio controls src="songs/song6.mp3"></audio>
-</div>
-
-<div class="song">
-<h3>🎵 أغنية 7</h3>
-<audio controls src="songs/song7.mp3"></audio>
-</div>
-
-<div class="song">
-<h3>🎵 أغنية 8</h3>
-<audio controls src="songs/song8.mp3"></audio>
-</div>
-
-<div class="song">
-<h3>🎵 أغنية 9</h3>
-<audio controls src="songs/song9.mp3"></audio>
-</div>
+<div class="song"><h3>🎵 Song 1</h3><audio controls src="songs/song1.mp3"></audio></div>
+<div class="song"><h3>🎵 Song 2</h3><audio controls src="songs/song2.mp3"></audio></div>
+<div class="song"><h3>🎵 Song 3</h3><audio controls src="songs/song3.mp3"></audio></div>
+<div class="song"><h3>🎵 Song 4</h3><audio controls src="songs/song4.mp3"></audio></div>
+<div class="song"><h3>🎵 Song 5</h3><audio controls src="songs/song5.mp3"></audio></div>
+<div class="song"><h3>🎵 Song 6</h3><audio controls src="songs/song6.mp3"></audio></div>
+<div class="song"><h3>🎵 Song 7</h3><audio controls src="songs/song7.mp3"></audio></div>
+<div class="song"><h3>🎵 Song 8</h3><audio controls src="songs/song8.mp3"></audio></div>
+<div class="song"><h3>🎵 Song 9</h3><audio controls src="songs/song9.mp3"></audio></div>
+<div class="song"><h3>🎵 Song 10</h3><audio controls src="songs/song10.mp3"></audio></div>
+<div class="song"><h3>🎵 Song 11</h3><audio controls src="songs/song11.mp3"></audio></div>
 
 </div>
 
 <footer>
-© 2025 | أغاني نصر الدين
+© 2025 Nassr Eddine Music
 </footer>
 
 </body>
