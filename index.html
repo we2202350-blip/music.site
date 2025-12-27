@@ -1,34 +1,144 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>Nassr Eddine Music</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>NasrEddine Music</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(135deg,#c8facc,#eaffea);
+    direction:rtl;
+}
+
+header{
+    background:#2ecc71;
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.logo{
+    font-size:40px;
+    letter-spacing:2px;
+}
+
+.search{
+    margin:20px auto;
+    width:80%;
+}
+
+.search input{
+    width:100%;
+    padding:12px;
+    font-size:18px;
+    border-radius:30px;
+    border:none;
+    outline:none;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:#a8f0b0;
+    border-radius:20px;
+    padding:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    transform:translateZ(0);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.title{
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+audio{
+    width:100%;
+}
+
+.download{
+    display:block;
+    text-align:center;
+    background:#2ecc71;
+    color:white;
+    padding:8px;
+    margin-top:10px;
+    border-radius:20px;
+    text-decoration:none;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>🎧 مرحبا بكم في أغاني نصر الدين</h1>
+    <div class="logo">NasrEddine Music 🎵</div>
+    مرحبا بكم في أغاني نصر الدين
 </header>
 
-<div class="songs">
+<div class="search">
+    <input type="text" id="search" placeholder="🔍 قلب على أغنية..." onkeyup="searchSongs()">
+</div>
 
-  <div class="song" onclick="playSong('songs/song1.mp3')">🎵 RWINA - CHAOS</div>
-  <div class="song" onclick="playSong('songs/song2.mp3')">🎵 IMBECILE - CHAOS</div>
-  <div class="song" onclick="playSong('songs/song3.mp3')">🎵 Cheb Houssem</div>
-  <div class="song" onclick="playSong('songs/song4.mp3')">🎵 Cheb Yasser</div>
-  <div class="song" onclick="playSong('songs/song5.mp3')">🎵 DORORORO</div>
-  <div class="song" onclick="playSong('songs/song6.mp3')">🎵 JOLLIE</div>
-  <div class="song" onclick="playSong('songs/song7.mp3')">🎵 BABY LOVA</div>
-  <div class="song" onclick="playSong('songs/song8.mp3')">🎵 TABOUT</div>
-  <div class="song" onclick="playSong('songs/song9.mp3')">🎵 Doberman</div>
-  <div class="song" onclick="playSong('songs/song10.mp3')">🎵 Gustavo</div>
-  <div class="song" onclick="playSong('songs/song11.mp3')">🎵 SOKKARA</div>
+<div class="container" id="songs">
+
+<div class="card">
+<div class="title">Chaw – RWINA</div>
+<audio controls src="songs/song1.mp3"></audio>
+<a class="download" href="songs/song1.mp3" download>تحميل</a>
+</div>
+
+<div class="card">
+<div class="title">Chaw – IMBECILE</div>
+<audio controls src="songs/song2.mp3"></audio>
+<a class="download" href="songs/song2.mp3" download>تحميل</a>
+</div>
+
+<div class="card">
+<div class="title">Toto – DORORORO</div>
+<audio controls src="songs/song3.mp3"></audio>
+<a class="download" href="songs/song3.mp3" download>تحميل</a>
+</div>
+
+<div class="card">
+<div class="title">Toto – Song 10</div>
+<audio controls src="songs/song10.mp3"></audio>
+<a class="download" href="songs/song10.mp3" download>تحميل</a>
+</div>
+
+<div class="card">
+<div class="title">Toto – Song 11</div>
+<audio controls src="songs/song11.mp3"></audio>
+<a class="download" href="songs/song11.mp3" download>تحميل</a>
+</div>
 
 </div>
 
-<audio id="audioPlayer" controls></audio>
+<script>
+function searchSongs(){
+    let input=document.getElementById("search").value.toLowerCase();
+    let cards=document.getElementsByClassName("card");
 
-<script src="script.js"></script>
+    for(let i=0;i<cards.length;i++){
+        let title=cards[i].innerText.toLowerCase();
+        cards[i].style.display = title.includes(input) ? "block" : "none";
+    }
+}
+</script>
+
 </body>
 </html>
